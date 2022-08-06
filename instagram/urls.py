@@ -26,7 +26,7 @@ urlpatterns = [
     path('users/', UserQosh.as_view()),
     path('user/<int:pk>', UserUpdateDelete.as_view()),
     path('profil/', ProfilQosh.as_view()),
-    path('profil/<int:pk>', ProfilUpdate.as_view()),
+    path('profil/<int:pk>', ProfilUpdateDelete.as_view()),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

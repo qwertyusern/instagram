@@ -15,7 +15,9 @@ class UserUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
 class ProfilQosh(generics.ListCreateAPIView):
     queryset=Profil.objects.all()
     serializer_class = ProfilSer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["ism"]
 
-class ProfilUpdate(generics.UpdateAPIView):
-    queryset=User.objects.all()
+class ProfilUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
+    queryset=Profil.objects.all()
     serializer_class = ProfilSer
