@@ -1,23 +1,16 @@
-from django.contrib.auth.models import User
 from django.shortcuts import render
-from rest_framework import status, generics, filters
+from rest_framework import status, generics
 from .serializers import *
+from rest_framework.response import Response
 
-class UserQosh(generics.CreateAPIView):
-    queryset=User.objects.all()
-    serializer_class = UserSer
+class Posts(generics.ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSer
 
-class UserUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
-    queryset=User.objects.all()
-    serializer_class = UserSer
+class Medias(generics.ListCreateAPIView):
+    queryset = Media.objects.all()
+    serializer_class = MediaSer
 
-
-class ProfilQosh(generics.ListCreateAPIView):
-    queryset=Profil.objects.all()
-    serializer_class = ProfilSer
-    filter_backends = [filters.SearchFilter]
-    search_fields = ["ism"]
-
-class ProfilUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
-    queryset=Profil.objects.all()
-    serializer_class = ProfilSer
+class MediaGet(generics.RetrieveAPIView):
+    queryset = Media.objects.all()
+    serializer_class = MediaSer

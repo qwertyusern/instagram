@@ -9,6 +9,8 @@ class ProfilSer(serializers.ModelSerializer):
         fields="__all__"
 
 class ConnectionSer(serializers.ModelSerializer):
+    follower=ProfilSer
+    following=ProfilSer
     class Meta:
         model=Connection
         fields="__all__"

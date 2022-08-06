@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app1',
     'userapp',
+
     'rest_framework_simplejwt',
     'drf_yasg',
 ]
